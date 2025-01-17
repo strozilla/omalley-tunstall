@@ -1,0 +1,10 @@
+ <div class="sidebar-latest-news-container">
+  <div class="flex flex-col gap-y-2 py-8 first:pt-2">
+    <div class="flex flex-col gap-1 items-start">
+      <span><a href="{{ post.link }}" class="font-playfair font-bold text-2xl text-black no-underline">{{ post.title }}</a></span>
+      <span class="text-xs">{{ post.date }}</span>
+    </div>
+    <span>{{ post.content | truncate(30)  }}</span>
+    <a href="{{ post.link }}" class="read-more-btn w-fit py-3 px-4 rounded-full no-underline bg-gray font-playfair font-semibold text-white text-sm tracking-wider uppercase">Read More</a>
+  </div>
+</div>

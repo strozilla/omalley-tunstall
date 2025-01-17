@@ -1,0 +1,11 @@
+{% extends "base.twig" %}
+{% block content %}
+<div class="page-wrapper flex flex-col gap-6 py-6 px-2 md:px-[3rem] lg:flex-row lg:gap-[3rem]">
+  <div class="left-col w-full max-w-full lg:px-[3rem]">
+  {{ post.content }}
+  </div>
+  <div class="right-col w-full lg:max-w-[20rem] lg:mt-8">
+    {% include "sidebar.twig" with { posts: sidebar_posts, show_latest_posts: true } %}
+  </div>
+</div>
+{% endblock content %}

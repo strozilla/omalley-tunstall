@@ -1,0 +1,52 @@
+<section class="relative flex flex-col justify-center md:h-[74.45rem]">
+    <div class="overlay absolute top-0 left-0 h-full w-full bg-white/30"></div>
+    <div class="hero-img-wrapper absolute top-0 left-0 -z-10">
+      <div class="hero-img-container block max-w-[1920px]">
+        <img class="block static max-w-full object-cover h-[74.45rem]" src="/wp-content/uploads/2022/06/hero-bg.png" alt="hero-bg" />
+      </div>
+    </div>
+    <div class="hero-content-container relative max-w-fit pl-[6rem] z-20">
+      <div class="hero__content leading-[1.25] uppercase font-playfair font-bold text-eg-darkblue">
+          {% if fields.heading %}<h1 class="hero__title">{{ fields.heading }}</h1>{% endif %}
+          <div class="flex flex-col py-4 pr-12">
+          {% if fields.description.top_line %}
+            <span class="text-[1.2rem] md:text-[1.5rem] lg:text-[2.87rem]">{{ fields.description.top_line }}</span>
+          {% endif %}
+          {% if fields.description.mid_line %}
+            <span class="text-[2rem] md:text-[2.5rem] lg:text-[4rem]">{{ fields.description.mid_line }}</span>
+          {% endif %}
+          {% if fields.description.bottom_line %}
+            <span class="text-[.825rem] md:text-[1.75rem] lg:text-[2rem]">{{ fields.description.bottom_line }}</span>
+          {% endif %}
+          </div>
+      </div>
+      {% if fields.button.url.url %}
+      <a class="btn" href="{{ fields.url }}">
+        <p>{{ fields.url.title }}</p>
+        <div class="btn-arrow">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path></svg>
+        </div>
+      </a>
+      {% endif %}
+    </div>
+
+    <div class="quote-box absolute flex max-w-fit bottom-0 right-0 gap-6 ml-auto mt-[8em] p-4 pr-10 bg-primary text-eg-darkblue z-50 lg:h-[14.5rem] lg:w-[63rem]">
+      <div class="quote-icon">
+        <img src="/wp-content/uploads/2025/01/quote.webp" alt="quote-icon" class="w-[10rem]" />
+      </div>
+      <div class="quote-text max-w-70ch font-playfair text-[1.25rem] lg:text-[1.5rem]">
+        <p>{{ fields.quote.text }}</p>
+        <div class="stars flex gap-1">
+          {% for i in 1..5 %}
+            <svg class="stroke-eg-darkblue fill-eg-darkblue" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73-3.523-3.356c-.329-.314-.158-.888.283-.95l4.898-.696 2.065-4.15c.197-.395.73-.395.927 0l2.065 4.15 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+            </svg>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="quote-author relative flex flex-col items-center pl-2">
+        <img src="{{ fields.quote.image }}" alt="author-image" class="w-[16rem] pb-2" />
+        <p class="font-semibold">- {{ fields.quote.author }}</p>
+      </div>
+    </div>
+</section>

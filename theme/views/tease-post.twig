@@ -1,0 +1,10 @@
+{% extends "tease.twig" %}
+
+{% block content %}
+    <h2 class="leading-5 mb-1"><a href="{{post.link}}" class="font-popp font-normal text-3xl text-eg-darkblue no-underline capitalize hover:text-primary transition-colors">{{post.title}}</a></h2>
+    <p class="text-primary">{{ post.date }}</p>
+    <p class="flex flex-col gap-4">{{post.preview.length(50)}}</p>
+    {% if post.thumbnail.src %}
+        <img src="{{post.thumbnail.src}}" />
+    {% endif %}
+{% endblock %}

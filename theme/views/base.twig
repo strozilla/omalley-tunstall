@@ -1,0 +1,48 @@
+<!doctype html>
+<html {{ site.language_attributes }}>
+<head>
+    <meta charset="{{ site.charset }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="pingback" href="{{ site.pingback_url }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        [x-cloak] { display: none; }
+    </style>
+    {{function('wp_head')}}
+</head>
+
+<body class="{{body_class}}" data-template="base.twig">
+    {% include 'partials/header.twig' %}
+    {% if not function('is_front_page') %}
+      <section class="inner-hero-wrapper relative flex flex-col justify-center">
+        <div class="overlay absolute top-0 left-0 h-full w-full"></div>
+        <div class="inner-hero-img-wrapper absolute top-0 left-0 -z-10">
+          <div class="hero-img-container block">
+            <img class="block static max-w-full object-cover h-[55em] lg:h-auto" src="/wp-content/uploads/2022/06/hero-bg.png" alt="hero-bg" />
+          </div>
+        </div>
+        <div class="inner-hero-content-container relative max-w-fit m-auto z-20 lg:m-0 lg:pl-[6rem]">
+          <div class="hero__content leading-[1.25] uppercase font-playfair font-bold text-eg-darkblue">
+              <div class="flex flex-col py-6 px-4 text-center gap-4 lg:px-0 lg:pr-12 lg:text-left">
+                <span class="text-[1.875rem] md:text-[2.25rem] lg:text-[2.87rem]">We Put Our Dedicated Team</span>
+                <span class="text-[2.25rem] md:text-[3rem] lg:text-[4.75rem]">to work for you</span>
+                <span class="text-[1.5rem] md:text-[1.875rem] lg:text-[2rem]">On The Front Lines Of The Legal Battle</span>
+              </div>
+          </div>
+        </div>
+    </section>
+
+    {% endif %}
+
+    {% block content %}
+    Sorry, no content
+    {% endblock %}
+
+    {% block footer %}
+        {% include 'footer.twig' %}
+        {{ function('wp_footer') }}
+    {% endblock %}
+</body>
+</html>

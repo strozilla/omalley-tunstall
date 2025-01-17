@@ -1,0 +1,82 @@
+<header class="header" x-data="{ isExpanded: false, isClicked: false  }">
+  <div class="header-top">
+    <a class="logo pt-2 max-w-[14rem] lg:max-w-[25rem]" href="/" rel="noreferrer">
+      <img src="/wp-content/uploads/2022/06/omalley-logo.png" />
+    </a>
+    <div class="flex">
+      <div class="header-phone-container">
+        <p class="phone-consult">For a free consultation Call</p>
+        <a href="tel:9192770150" class="phone-num-style">(919) 277-0150</a>
+      </div>
+      <button
+        class="Header__Button hidden justify-center items-center xl:flex xl:w-[8rem] xl:h-[8rem] p-2 !bg-black/50">
+        <svg stroke="#fff" fill="#fff" stroke-width="0" viewBox="0 0 512 512"
+          class="Header___StyledGiSmartphone-sc-1cz9jl7-9 text-[3.75rem]"
+          height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+          <path d="M160 32c-16 0-32 16-32 32v384c0 16 16 32 32 32h192c16 0 32-16 32-32V64c0-16-16-32-32-32H160zm21.68 23h96v18h-96V55zM304 55h32v18h-32V55zM154 96h204v320H154V96zm70 342h63.984c16 0 16 16 16 16v6H208v-6s0-16 16-16z"></path>
+        </svg>
+      </button>
+      <button
+        class="header__button bg-[#E58B00] flex flex-col justify-center items-center w-[5.4rem] h-[5.4rem] lg:w-[8rem] lg:h-[8rem]"
+        @click="isExpanded = !isExpanded, isClicked = false">
+        <div>
+          <div class="line "></div>
+          <div class="line "></div>
+          <div class="line "></div>
+          <div class="block uppercase xl:hidden">Menu</div>
+        </div>
+      </button>
+      <nav class="header__menu" x-show="isExpanded" @click.outside="isExpanded = false, isClicked = false"
+      x-collapse.transition.in.duration.1000.out.duration.1000.
+      x-cloak
+      >
+        <div class="flex items-center gap-6 py-6"><img class="max-w-[250px]" src="/wp-content/uploads/2022/06/omalley-logo-hc.png" />
+        <button
+          class="close button ml-auto max-h-[45px]"
+          @click="isExpanded = false">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 352 512" height="1.25em" width="1.25em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path>
+          </svg>
+        </button>
+        </div>
+        <div class="items">
+          {% for item in main_menu.items %}
+            <div class="items-center w-full" x-data="{ isExpanded: false, isClicked: false }">
+              <a href="{{ item.link }}" :class="isExpanded ? 'text-primary' : 'text-white'" class="item flex no-underline">{{ item.title }}
+              {% if item.children is not empty %}
+                <button @click.prevent="isExpanded = !isExpanded; isClicked = true" @click.outside="isClicked = false" class="expand inline-block ml-auto">
+                  <svg x-show="!isExpanded" :class="{ 'animate-rotateClosed': isClicked }" class="transition-transform duration-1000" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height=".75em" width=".75em" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+                  </svg>
+                  <svg x-show="isExpanded" :class="{ 'animate-rotateOpen': isExpanded }" class="transition-transform duration-1000" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height=".75em" width=".75em" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+                  </svg>
+                </button>
+                {% include "/partials/__children.twig" with {items: item.children} %}
+              {% endif %}
+              </a>
+            </div>
+
+          {% endfor %}
+        </div>
+      </nav>
+    </div>
+  </div>
+  <section class="mobile-contact-bar absolute top-[8em] flex w-full lg:hidden">
+      <a href="tel:9192770150" class="phone-num-style flex gap-2 justify-center items-center w-[50%] py-6 px-1 bg-primary text-white">
+        <span class="font-semibold text-[1rem] md:text-[1.5rem]">Call Us Now</span>
+        <span>
+          <svg stroke="#fff" fill="#fff" stroke-width="0" viewBox="0 0 512 512" class="text-[2.5rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M160 32c-16 0-32 16-32 32v384c0 16 16 32 32 32h192c16 0 32-16 32-32V64c0-16-16-32-32-32H160zm21.68 23h96v18h-96V55zM304 55h32v18h-32V55zM154 96h204v320H154V96zm70 342h63.984c16 0 16 16 16 16v6H208v-6s0-16 16-16z"></path>
+          </svg>
+        </span>
+      </a>
+      <a href="/contact/" class="email-style flex gap-2 justify-center items-center w-[50%] py-6 px-1 bg-eg-darkblue text-white">
+        <svg stroke="#fff" fill="none" stroke-width="1" viewBox="0 0 24 24" class="text-[2.5rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <path d="M22 6l-10 7L2 6"></path>
+        </svg>
+        <span class="font-semibold text-[1rem] md:text-[1.5rem]">e-Mail Us Now</span>
+      </a>
+  </section>
+</header>
