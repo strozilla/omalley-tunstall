@@ -1,0 +1,61 @@
+<div class="intro-image-wrapper cursor-pointer" x-data="videoModal()">
+  <div class="intro-image" @click="openModal">
+    <img class="relative w-full" src="{{ fields.image }}" alt="{{ fields.image.alt }}" />
+  </div>
+  <div
+    x-show="isOpen"
+    class="fixed top-0 left-0 w-screen h-screen bg-black/90 z-[5000] flex justify-center items-center"
+    @click.away="closeModal"
+    x-transition:enter="transition-opacity ease-out duration-300"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition-opacity ease-in duration-300"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+  >
+    <div class="video-container relative w-full max-w-[80rem]">
+      <button class="close-btn absolute top-0 right-0 p-4 text-white" @click="closeModal">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <div class="video-wrapper">
+        <iframe
+          class="w-full h-[315px] md:h-[500px]"
+          src="https://player.vimeo.com/video/{{ fields.video_id }}"
+          width="640"
+          height="360"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          id="vimeo-player"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+  function videoModal() {
+    let player = null;
+
+    return {
+      isOpen: false,
+      openModal() {
+        this.isOpen = true;
+        if (!player) {
+          const iframe = document.getElementById('vimeo-player');
+          player = new Vimeo.Player(iframe);
+        }
+        player.play();
+      },
+      closeModal() {
+        this.isOpen = false;
+        if (player) {
+          player.pause();
+        }
+      },
+    };
+  }
+</script>

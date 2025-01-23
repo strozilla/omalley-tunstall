@@ -1,11 +1,11 @@
-<section class="relative flex flex-col justify-center md:h-[74.45rem]">
+<section class="relative flex flex-col h-[74.45rem] lg:justify-center">
     <div class="overlay absolute top-0 left-0 h-full w-full bg-white/30"></div>
     <div class="hero-img-wrapper absolute top-0 left-0 -z-10">
       <div class="hero-img-container block max-w-[1920px]">
         <img class="block static max-w-full object-cover h-[74.45rem]" src="/wp-content/uploads/2022/06/hero-bg.png" alt="hero-bg" />
       </div>
     </div>
-    <div class="hero-content-container relative max-w-fit pl-[6rem] z-20">
+    <div class="hero-content-container max-w-fit mt-96 mx-auto z-20 lg:mt-0 lg:mx-0 lg:pl-[6rem]">
       <div class="hero__content leading-[1.25] uppercase font-playfair font-bold text-eg-darkblue">
           {% if fields.heading %}<h1 class="hero__title">{{ fields.heading }}</h1>{% endif %}
           <div class="flex flex-col py-4 pr-12">
@@ -30,21 +30,27 @@
       {% endif %}
     </div>
 
-    <div class="quote-box absolute flex max-w-fit bottom-0 right-0 gap-6 ml-auto mt-[8em] p-4 pr-10 bg-primary text-eg-darkblue z-50 lg:h-[14.5rem] lg:w-[63rem]">
-      <div class="quote-icon">
-        <img src="/wp-content/uploads/2025/01/quote.webp" alt="quote-icon" class="w-[10rem]" />
-      </div>
-      <div class="quote-text max-w-70ch font-playfair text-[1.25rem] lg:text-[1.5rem]">
-        <p>{{ fields.quote.text }}</p>
-        <div class="stars flex gap-1">
-          {% for i in 1..5 %}
-            <svg class="stroke-eg-darkblue fill-eg-darkblue" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73-3.523-3.356c-.329-.314-.158-.888.283-.95l4.898-.696 2.065-4.15c.197-.395.73-.395.927 0l2.065 4.15 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
-            </svg>
-          {% endfor %}
+    <div class="attorneys-img hidden absolute top-0 right-0 z-10 w-[63rem] h-[60rem] xl:block">
+      <img src="/wp-content/uploads/2022/12/Attorney-Photo_2022-copy.png" alt="O'Malley Tunstall Attorneys" />
+    </div>
+
+    <div class="quote-box absolute flex flex-col max-w-fit bottom-0 right-0 gap-6 ml-auto mt-[8em] p-4 pr-10 bg-primary text-eg-darkblue z-10 lg:flex-row lg:w-[63rem]">
+      <div class="flex gap-6">
+        <div class="quote-icon w-fit">
+          <img src="/wp-content/uploads/2025/01/quote.webp" alt="quote-icon" class="w-14" />
+        </div>
+        <div class="quote-text w-full font-playfair text-[1.25rem] lg:text-[1.5rem]">
+          <p>{{ fields.quote.text }}</p>
+          <div class="stars flex gap-1">
+            {% for i in 1..5 %}
+              <svg class="stroke-eg-darkblue fill-eg-darkblue" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73-3.523-3.356c-.329-.314-.158-.888.283-.95l4.898-.696 2.065-4.15c.197-.395.73-.395.927 0l2.065 4.15 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+              </svg>
+            {% endfor %}
+          </div>
         </div>
       </div>
-      <div class="quote-author relative flex flex-col items-center pl-2">
+      <div class="quote-author relative max-w-20 m-auto flex flex-col items-center pl-2">
         <img src="{{ fields.quote.image }}" alt="author-image" class="w-[16rem] pb-2" />
         <p class="font-semibold">- {{ fields.quote.author }}</p>
       </div>

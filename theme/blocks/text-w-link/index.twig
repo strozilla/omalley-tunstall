@@ -1,0 +1,11 @@
+<div class="px-4 md:px-20 xl:pr-[16rem] xl:pl-[10rem]">
+  <div class="flex gap-x-12">
+    <div class="line hidden h-[.125rem] w-16 mt-2 bg-eg-darkblue xl:block"></div>
+    <div class="xl:w-[90%]">
+      <InnerBlocks />
+      {% if fields.link %}
+        <a href="{{ fields.link.url }}" class="group flex items-center gap-x-6 mr-auto font-playfair no-underline">{{ fields.link.title }} <i class="fa-solid fa-arrow-right-long group-hover:translate-x-4 transition-all ease-in-out duration-300"></i></a>
+      {% endif %}
+    </div>
+  </div>
+</div>

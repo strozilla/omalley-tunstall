@@ -633,6 +633,10 @@ video {
   .container{
     max-width: 1280px;
   }
+
+  .intro-heading, .intro-image {
+    width: 50%;
+  }
 }
 
 @media (min-width: 1440px){
@@ -659,6 +663,12 @@ video {
   .footer-contact .form-row p label {
     width: 100%;
   }
+  .contact-form-bottom p {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      align-items: center;
+    }
 }
 
 
@@ -24338,6 +24348,35 @@ body {
   background: linear-gradient(to right, rgba(255, 255, 255, 0.8), transparent);
 }
 
+
+.intro-image {
+  position: relative;
+  cursor: pointer;
+  max-width: 600px;
+  max-height: 350px;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.intro-image img {
+  width: 100%;
+  height: 100%;
+}
+.intro-image::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url('/wp-content/uploads/2025/01/play-button.webp') no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 10;
+}
+
 .sidebar-contact form .wpcf7-list-item, .sidebar-contact form p, .footer-contact form .wpcf7-list-item, .footer-contact form p {
   line-height: 1.5;
 }
@@ -24388,13 +24427,21 @@ body {
   border-radius: 50px;
   cursor: pointer;
   width: fit-content;
-  margin-right: auto;
 }
 .sidebar-contact button[type="submit"] .btn-arrow, .footer-contact button[type="submit"] .btn-arrow {
   padding: 0.5rem;
   background: #E58B00;
   border-radius: 50%;
 }
+.side-form-bottom p {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      align-items: center;
+}
+.side-form-bottom p .form-btn-content {
+    line-height: 1;
+  }
 
 .footer-bg-wrapper {
   background-size: 115%;
@@ -24581,7 +24628,15 @@ ol {
     .footer-contact .form-row p label {
       width: 50%;
     }
+
+    .contact-form-bottom p {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      justify-content: space-between;
+    }
   }
+
 
   @media (min-width: 1024px){
     .sm\:container{
