@@ -109,7 +109,7 @@
             "label": "Button",
             "name": "button",
             "aria-label": "",
-            "type": "url",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -118,9 +118,8 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "allow_in_bindings": 0,
-            "placeholder": ""
+            "return_format": "array",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_678856f376d6d",
@@ -227,5 +226,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736988546
+    "modified": 1737647849
 }

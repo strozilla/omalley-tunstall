@@ -1,0 +1,11 @@
+<div class="intro-heading mt-0 {{ fields.text_align }} {{ fields.heading_color }}">
+  {% if fields.section_title %}
+    <span class="{{ fields.title_color }}">{{ fields.section_title }}</span>
+  {% endif %}
+  {{ fields.heading }}
+  {% if fields.icon %}
+  <div class="icon">
+    <img src="{{ fields.icon }}" alt="{{ fields.icon.title }}">
+  </div>
+  {% endif %}
+</div>

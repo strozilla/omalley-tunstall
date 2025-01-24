@@ -5,24 +5,24 @@
         <img class="block static max-w-full object-cover h-[74.45rem]" src="/wp-content/uploads/2022/06/hero-bg.png" alt="hero-bg" />
       </div>
     </div>
-    <div class="hero-content-container max-w-fit mt-96 mx-auto z-20 lg:mt-0 lg:mx-0 lg:pl-[6rem]">
-      <div class="hero__content leading-[1.25] uppercase font-playfair font-bold text-eg-darkblue">
+    <div class="hero-content-container max-w-fit mt-72 mx-auto z-20 md:mt-96 lg:mt-0 lg:mx-0 lg:pl-[6rem]">
+      <div class="hero__content bg-white/70 leading-[1.25] uppercase font-playfair font-bold text-eg-darkblue py-4 md:bg-white/0 md:bg-gradient-to-r md:from-transparent md:to-white">
           {% if fields.heading %}<h1 class="hero__title">{{ fields.heading }}</h1>{% endif %}
-          <div class="flex flex-col py-4 pr-12">
+          <div class="flex flex-col px-4 md:py-4 md:px-0 md:pr-12">
           {% if fields.description.top_line %}
-            <span class="text-[1.2rem] md:text-[1.5rem] lg:text-[2.87rem]">{{ fields.description.top_line }}</span>
+            <span class="text-[1.25rem] md:text-[1.5rem] lg:text-[2.87rem]">{{ fields.description.top_line }}</span>
           {% endif %}
           {% if fields.description.mid_line %}
-            <span class="text-[2rem] md:text-[2.5rem] lg:text-[4rem]">{{ fields.description.mid_line }}</span>
+            <span class="text-[2.25rem] md:text-[2.5rem] lg:text-[4rem]">{{ fields.description.mid_line }}</span>
           {% endif %}
           {% if fields.description.bottom_line %}
             <span class="text-[.825rem] md:text-[1.75rem] lg:text-[2rem]">{{ fields.description.bottom_line }}</span>
           {% endif %}
           </div>
       </div>
-      {% if fields.button.url.url %}
-      <a class="btn" href="{{ fields.url }}">
-        <p>{{ fields.url.title }}</p>
+      {% if fields.button.url %}
+      <a class="btn" href="{{ fields.button.url }}">
+        <span>{{ fields.button.title }}</span>
         <div class="btn-arrow">
           <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path></svg>
         </div>

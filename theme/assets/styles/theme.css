@@ -18,7 +18,7 @@ body {
   @apply relative flex items-center justify-center bg-primary transition-all duration-500 ease-in-out border-2 text-white font-bold uppercase text-sm px-8 py-2;
   border-radius: 20px;
 
-  &:hover {
+  :hover {
     @apply bg-transparent border-primary text-primary;
   }
 }
@@ -26,7 +26,7 @@ body {
 .header {
   @apply relative z-50;
 
-  &__button {
+  :is(__button) {
     @apply relative transition-all duration-500 ease-in-out bg-primary font-bold text-white p-8 uppercase text-sm;
 
     .line {
@@ -35,18 +35,18 @@ body {
       height: 2px;
     }
 
-    &.open {
+    .open {
       @apply bg-hover;
     }
 
-    &:hover {
+    :hover {
       @apply bg-hover;
     }
 
     z-index: 10000;
   }
 
-  &__menu {
+  :is(__menu) {
     @apply fixed transform translate-x-full transition-all duration-500 ease-in-out shadow-lg h-full right-0 top-0 px-12 py-4 max-h-screen overflow-auto bg-white;
     z-index: 10001;
 
@@ -57,7 +57,7 @@ body {
     a {
       @apply transition-all duration-500 ease-in-out;
 
-      &:hover {
+      :hover {
         @apply text-primary;
       }
     }
@@ -73,11 +73,11 @@ body {
         }
       }
 
-      &:not(.children) {
+      :not(.children) {
         @apply my-6;
       }
 
-      &.children {
+      .children {
         @apply transition-all duration-500 ease-in-out overflow-hidden pl-2 border-l-2 border-primary;
         max-height: 0;
       }
@@ -86,14 +86,14 @@ body {
       [data-action="click->menu#toggleChildren"] {
         @apply bg-primary text-white absolute right-0 px-2 transition-all duration-500 ease-in-out;
         top: 0.25rem;
-        &:hover,
-        &.active {
+        :hover,
+        .active {
           @apply bg-hover;
         }
       }
     }
 
-    &.open {
+    .open {
       @apply translate-x-0 bg-eg-darkblue;
     }
 
@@ -103,7 +103,7 @@ body {
       span {
         @apply text-primary;
 
-        &.error {
+        .error {
           @apply text-red-500;
         }
       }
@@ -123,17 +123,25 @@ body {
 
 
 .btn {
-  @apply flex items-center justify-between rounded-full bg-gray text-white font-playfair font-bold capitalize w-fit gap-4 px-6 py-4 mt-[];
+  @apply flex items-center justify-between rounded-full bg-gray text-white font-playfair font-bold w-fit gap-4 mt-8 py-4 px-5 no-underline;
+}
+
+.content-image {
+  @apply block xl:hidden;
+}
+
+.content-col-xl {
+  @apply hidden xl:block;
 }
 
 .content {
   @apply mx-auto mt-32 text-gray w-full pb-32;
   max-width: 900px;
 
-  &__header {
+  :is(__header) {
     @apply flex flex-col items-center justify-center mb-8;
 
-    &--title {
+    --title {
       @apply font-bold text-lg mt-2 mb-0;
     }
 
@@ -151,7 +159,7 @@ body {
     }
   }
 
-  &__container {
+  :is(__container) {
     @apply w-full px-8 border-l-2 border-r-2 border-primary border-opacity-25;
   }
 
@@ -190,7 +198,7 @@ body {
     tr {
       @apply border-2 border-offwhite text-center;
 
-      &:nth-child(odd) {
+      :nth-child(odd) {
         td {
           @apply bg-offwhite;
         }
@@ -206,7 +214,7 @@ body {
     }
   }
 
-  &__container {
+  :is(__container) {
     blockquote {
       @apply pl-4 border-l-2 border-primary;
     }
@@ -216,7 +224,7 @@ body {
     h3,
     h4 {
       @apply font-bold flex items-center justify-start;
-      &:after {
+      :after {
         @apply text-xs bg-gray text-white px-2 ml-4;
         border-radius: 16px;
         content: "H4";
@@ -225,7 +233,7 @@ body {
 
     h3 {
       @apply text-xl;
-      &:after {
+      :after {
         content: "H3";
       }
     }
@@ -233,7 +241,7 @@ body {
     h2 {
       @apply text-2xl;
 
-      &:after {
+      :after {
         content: "H2";
       }
     }
@@ -241,7 +249,7 @@ body {
     h1 {
       @apply text-3xl;
 
-      &:after {
+      :after {
         @apply bg-primary;
         content: "H1";
       }
