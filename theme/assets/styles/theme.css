@@ -126,6 +126,18 @@ body {
   @apply flex items-center justify-between rounded-full bg-gray text-white font-playfair font-bold w-fit gap-4 mt-8 py-4 px-5 no-underline;
 }
 
+.intro-section {
+  @apply !pt-10 !pb-12;
+}
+
+.intro-about {
+  @apply pb-20;
+}
+
+.latest-news-col {
+  @apply lg:!max-w-[80%];
+}
+
 .content-image {
   @apply block xl:hidden;
 }
@@ -273,4 +285,31 @@ body {
     @apply mt-4 text-lg;
     max-width: 500px;
   }
+}
+
+.ar-profile-container {
+  @apply max-w-[1100px] flex !flex-wrap gap-y-10 items-center justify-center m-auto;
+}
+.home-profile {
+  @apply max-w-[450px] w-auto px-4 overflow-hidden lg:w-1/3;
+}
+.home-profile figure {
+  @apply flex max-w-[335px] w-full h-[450px] overflow-hidden;
+}
+.home-profile figure img  {
+  @apply object-cover w-full h-full;
+}
+.home-profile-link {
+  @apply flex items-center justify-center w-fit m-auto mt-4 p-3 border-2 border-white font-playfair text-xl text-white no-underline hover:bg-white hover:text-black;
+}
+
+.achievements-container {
+  @apply bg-eg-darkblue/70 flex !flex-wrap justify-center m-auto p-6 lg:flex-row lg:max-w-[80%];
+}
+.achievements-card {
+  @apply p-12;
+}
+
+.awards img {
+  @apply max-w-[175px];
 }

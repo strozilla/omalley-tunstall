@@ -40,6 +40,7 @@ export default {
         450: "450px",
       },
       screens: {
+        sm: "530px",
         md: "640px",
         lg: "1024px",
         xl: "1280px",
@@ -58,6 +59,10 @@ export default {
       animation: {
         rotateClosed: "rotateClosed 1s ease-in-out",
         rotateOpen: "rotateOpen 1s ease-in-out",
+      },
+      maxWidth: {
+        wide: "100%",
+        narrow: "33rem",
       },
     },
   },

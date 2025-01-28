@@ -1,0 +1,19 @@
+<div class="slide-container reviews relative w-fit m-auto">
+  <div class="swiper">
+    <div class="swiper-wrapper max-w-[300px] min-h-[15rem] mx-auto sm:max-w-[450px] md:max-w-[550px] lg:max-w-[700px]">
+    {% for slide in fields.slides  %}
+      <div class="swiper-slide flex flex-col items-start justify-between h-auto py-12 pl-12 pr-16 bg-eg-darkblue text-white">
+        <div class="reviews-item-content w-full">
+          {{ slide.content }}
+        </div>
+        <div class="reviews-item-author flex gap-10 mt-auto">
+          <div class="reviews-item-author-icon max-w-16"><img src="{{ slide.icon }}" alt="{{ slide.icon.title }}"></div>
+          <div class="reviews-item-author-name">{{ slide.author }}</div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+    <div class="swiper-button-prev top-auto !right-[4px]"></div>
+    <div class="swiper-button-next top-auto !-right-[35px]"></div>
+</div>

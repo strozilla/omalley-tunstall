@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@alpinejs/collapse": "^3.14.8",
+    "swiper": "^11.2.1",
     "vite-svg-loader": "^5.1.0"
   }
 }

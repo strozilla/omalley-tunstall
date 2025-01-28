@@ -3,6 +3,33 @@
     "title": "Block - Column",
     "fields": [
         {
+            "key": "field_6793c732fbc06",
+            "label": "Max Width",
+            "name": "max_width",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "max-w-wide": "max-w-wide",
+                "max-w-narrow m-auto": "max-w-narrow m-auto"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "allow_custom": 0,
+            "allow_in_bindings": 1,
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
+        },
+        {
             "key": "field_6792879b3e0e6",
             "label": "Width",
             "name": "width",
@@ -35,7 +62,7 @@
             "label": "Hidden",
             "name": "hidden",
             "aria-label": "",
-            "type": "true_false",
+            "type": "checkbox",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -44,12 +71,56 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0,
+            "choices": {
+                "hidden": "hidden",
+                "md:hidden": "md:hidden",
+                "lg:hidden": "lg:hidden",
+                "xl:hidden": "xl:hidden"
+            },
+            "default_value": [],
+            "return_format": "array",
+            "allow_custom": 0,
+            "allow_in_bindings": 1,
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
+        },
+        {
+            "key": "field_67939ea9c0551",
+            "label": "Show",
+            "name": "show",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6792cf00c076d",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "block": "block",
+                "md:block": "md:block",
+                "lg:block": "lg:block",
+                "xl:block": "xl:block"
+            },
+            "default_value": [],
+            "return_format": "array",
+            "allow_custom": 0,
             "allow_in_bindings": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
         }
     ],
     "location": [
@@ -70,5 +141,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737674514
+    "modified": 1737739828
 }

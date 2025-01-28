@@ -3,9 +3,36 @@
     "title": "Block - Heading",
     "fields": [
         {
+            "key": "field_6793c524a9332",
+            "label": "Max Width",
+            "name": "max_width",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "Add tailwind max-width class ex:\r\nmax-w-10 or max-w-[600px]",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "max-w-wide": "max-w-wide",
+                "max-w-narrow m-auto": "max-w-narrow m-auto"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "allow_custom": 0,
+            "allow_in_bindings": 1,
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
+        },
+        {
             "key": "field_67928c0f6807a",
-            "label": "Text Align",
-            "name": "text_align",
+            "label": "Placement",
+            "name": "placement",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -17,9 +44,9 @@
                 "id": ""
             },
             "choices": {
-                "text-left": "text-left",
-                "text-center": "text-center",
-                "text-right": "text-right"
+                "justify-items-start": "justify-items-start",
+                "justify-items-center": "justify-items-center",
+                "justify-items-end": "justify-items-end"
             },
             "default_value": false,
             "return_format": "value",
@@ -175,5 +202,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737675596
+    "modified": 1737739814
 }

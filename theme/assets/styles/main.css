@@ -45,9 +45,10 @@ main {
 
 h1 {
   font-family: Playfair Display, serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-transform: uppercase;
   margin: 0.67em 0 1rem;
+  line-height: 1.25;
 }
 
 h2 {
@@ -23964,6 +23965,13 @@ video {
   }
 }
 
+.max-w-narrow {
+  max-width: 37rem;
+}
+.max-w-wide {
+  max-width: 100%;
+}
+
 .animate-none{
   -webkit-animation: none;
           animation: none;
@@ -24306,7 +24314,7 @@ body {
   max-height: 350px;
   height: 100%;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
 }
 .intro-image img {
   width: 100%;
@@ -24340,6 +24348,30 @@ body {
     transition-duration: 500ms;
 }
 
+.slide-container.reviews::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: -30px;
+  right: -10px;
+  background: url('/wp-content/uploads/2025/01/quote-orange.webp') no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 10;
+
+}
+
+.swiper-button-prev {
+  left: unset;
+}
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-size: .75rem;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 1rem;
+}
 
 .sidebar-contact form .wpcf7-list-item, .sidebar-contact form p, .footer-contact form .wpcf7-list-item, .footer-contact form p {
   line-height: 1.5;

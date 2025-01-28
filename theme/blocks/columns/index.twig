@@ -1,4 +1,4 @@
-<section class="{% if fields.bg_blue %}bg-eg-darkblue/90{% endif %} {% if fields.bg_image %}bg-[url('{{ fields.bg_image }}')]{% endif %} py-10">
+<section class="{{ classes }} {% if fields.bg_blue %}bg-eg-darkblue/90{% endif %} bg-cover bg-center bg-no-repeat bg-blend-multiply py-32" style="{% if fields.bg_image %}background-image: url('{{ fields.bg_image }}'){% endif %}">
     <div class="max-w-6xl mx-auto flex flex-col gap-8 py-6 px-4 z-20 md:max-w-4xl lg:max-w-screen-xxl lg:px-12 xl:{{ fields.flex_direction }} xl:gap-16 xl:m-auto {% if fields.float_right %}xl:mr-0 xl:ml-auto xl:pr-0 xl:pl-8{% endif %} {% if fields.float_left %}xl:ml-0 xl:mr-auto xl:pl-0 xl:pr-8{% endif %}">
         <InnerBlocks />
     </div>

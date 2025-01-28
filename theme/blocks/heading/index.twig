@@ -1,11 +1,11 @@
-<div class="intro-heading mt-0 {{ fields.text_align }} {{ fields.heading_color }}">
+<div class="{{ classes }} intro-heading {% if fields.max_width %}{% for width in fields.max_width %}{{ width }}{% endfor %}{% else %}w-full{% endif %} mt-0 pb-8 {{ fields.placement }} {{ fields.heading_color }}">
   {% if fields.section_title %}
     <span class="{{ fields.title_color }}">{{ fields.section_title }}</span>
   {% endif %}
   {{ fields.heading }}
   {% if fields.icon %}
-  <div class="icon">
-    <img src="{{ fields.icon }}" alt="{{ fields.icon.title }}">
-  </div>
+  <span class="icon w-fit">
+    <img src="{{ fields.icon }}" alt="{{ fields.icon.title }}" width="25" height="25">
+  </span>
   {% endif %}
 </div>
